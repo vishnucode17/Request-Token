@@ -7,7 +7,9 @@
     <title>OTP</title>
 </head>
 <body>
-    <p>{{token}}</p>
+    {% for message in messages %}
+            <p>{{message}}</p>
+            {% endfor %}
     <form method="post">
         {% csrf_token %}
         <input type="text" name="otp" placeholder="Enter the OTP">
